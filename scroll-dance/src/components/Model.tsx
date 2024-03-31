@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useAnimations, useGLTF } from '@react-three/drei';
 
-export default function Model() {
+export default function Model({
+    handleOnClick,
+}: {
+    handleOnClick: () => void;
+}) {
     const { scene, animations } = useGLTF('./src/assets/dancer.glb');
     const animation = useAnimations(animations, scene);
     const [currentAnimation, setCurrentAnimation] = useState<string>('');
@@ -23,7 +27,7 @@ export default function Model() {
         };
     }, [animation, currentAnimation]);
 
-    const handleOnClick = () => {
+    const handleWindowClick = () => {
         const currentIndex = animation.names.indexOf(currentAnimation);
         let newIndex = 0;
         if (animation.names.length - 1 !== currentIndex) {
@@ -31,7 +35,14 @@ export default function Model() {
         }
         setCurrentAnimation(animation.names[newIndex]);
     };
-    window.addEventListener('click', handleOnClick);
+    window.addEventListener('click', handleWindowClick);
 
-    return <primitive object={scene} scale={0.01} position-y={0.83} />;
+    return (
+        <primitive
+            object={scene}
+            scale={0.01}
+            position-y={0.83}
+            onClick={handleOnClick}
+        />
+    );
 }

@@ -16,6 +16,7 @@
   "devDependencies": {
     "@react-three/drei": "^9.103.0",
     "@react-three/fiber": "^8.16.1",
+    "@react-three/postprocessing": "^2.16.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/three": "^0.163.0",
