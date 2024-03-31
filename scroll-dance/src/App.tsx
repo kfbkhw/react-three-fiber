@@ -1,4 +1,4 @@
-import MainCanvas from './components/MainCanvas';
+import MainCanvas from './MainCanvas';
 
 function App() {
     return (
