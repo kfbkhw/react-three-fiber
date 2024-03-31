@@ -3,6 +3,7 @@ import { Color } from 'three';
 import Control from './components/Control';
 import Light from './components/Light';
 import Mesh from './components/Mesh';
+import Model from './components/Model';
 
 export default function MainCanvas() {
     return (
@@ -21,6 +22,7 @@ export default function MainCanvas() {
             <Control />
             <Light />
             <Mesh />
+            <Model />
         </Canvas>
     );
 }
