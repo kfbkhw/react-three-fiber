@@ -1,5 +1,11 @@
+import MainCanvas from './components/MainCanvas';
+
 function App() {
-    return <></>;
+    return (
+        <>
+            <MainCanvas />
+        </>
+    );
 }
 
 export default App;
