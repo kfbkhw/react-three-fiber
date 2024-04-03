@@ -1,12 +1,9 @@
-import { OrbitControls } from '@react-three/drei';
+import { ScrollControls } from '@react-three/drei';
 
-export default function Control() {
+export default function Control({ children }: { children: JSX.Element }) {
     return (
-        <OrbitControls
-            enableDamping
-            minDistance={2}
-            maxDistance={10}
-            maxPolarAngle={Math.PI / 2.1}
-        />
+        <ScrollControls pages={8} damping={0.25}>
+            {children}
+        </ScrollControls>
     );
 }

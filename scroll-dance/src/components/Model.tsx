@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useAnimations, useGLTF } from '@react-three/drei';
+import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
 
 export default function Model() {
     const { scene, animations } = useGLTF('./src/assets/dancer.glb');
     const animation = useAnimations(animations, scene);
     const [currentAnimation, setCurrentAnimation] = useState<string>('');
+    const scroll = useScroll();
 
     useEffect(() => {
         scene.traverse((obj) => {

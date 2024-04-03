@@ -19,10 +19,11 @@ export default function MainCanvas() {
             scene={{ background: new Color(0x000000) }}
             shadows
         >
-            <Control />
+            <Control>
+                <Model />
+            </Control>
             <Light />
             <Mesh />
-            <Model />
         </Canvas>
     );
 }
